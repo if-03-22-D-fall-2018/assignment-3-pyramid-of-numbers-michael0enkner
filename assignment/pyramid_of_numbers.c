@@ -21,7 +21,8 @@
 /** BigInt represents an integer number which can have MAX_DIGITS digits
 *** @see MAX_DIGITS
 */
-struct BigInt {
+struct BigInt
+{
 	/** number of digits of the big int. */
 	int digits_count;
 
@@ -82,6 +83,6 @@ int main(int argc, char *argv[])
 	printf("==================\n");
 	printf("Please enter a Number: ");
 	scanf("%s",user_input);
-
+	int strtobig_int(const char *str, int len, struct BigInt *big_int);
 	return 0;
 }
