@@ -1,9 +1,9 @@
 /*----------------------------------------------------------
- *				HTBLA-Leonding / Class: <your class>
+ *				HTBLA-Leonding / Class: <2Dhif>
  * ---------------------------------------------------------
- * Exercise Number: 0
+ * Exercise Number: 3
  * Title:			Pyramid of Numbers
- * Author:			<your name>
+ * Author:			<Michael Enkner>
  * ----------------------------------------------------------
  * Description:
  * Calculates a pyramid of numbers, i.e., it multiplies a big
@@ -13,6 +13,7 @@
  * ----------------------------------------------------------
  */
 #include <stdio.h>
+#include <string.h>
 
 /// The maximum number of digits allowed in a big int.
 #define MAX_DIGITS 80
@@ -76,5 +77,11 @@ void copy_big_int(const struct BigInt *from, struct BigInt *to);
 */
 int main(int argc, char *argv[])
 {
+	char user_input[MAX_DIGITS];
+	printf("Pyramid_of_Numbers\n");
+	printf("==================\n");
+	printf("Please enter a Number: ");
+	scanf("%s",user_input);
+
 	return 0;
 }
