@@ -14,6 +14,7 @@
  */
 #include <stdio.h>
 #include <string.h>
+#include <stdbool.h>
 
 /// The maximum number of digits allowed in a big int.
 #define MAX_DIGITS 80
@@ -103,6 +104,7 @@ int main(int argc, char *argv[])
 	scanf("%s",user_input);
 	length = strlen(user_input);
 	converted = strtobig_int(user_input, length ,&bigint);
+	printf("converted number: %d\n",converted);
 	if (converted == 0)
 	{
 		return 0;
