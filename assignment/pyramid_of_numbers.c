@@ -38,8 +38,23 @@ struct BigInt
 *** @param *big_int The converted string now as BigInt.
 * @return The number of characters converted.
 */
-int strtobig_int(const char *str, int len, struct BigInt *big_int);
-
+int strtobig_int(const char *str, int len, struct BigInt *big_int)
+{
+	int converted =0;
+	int count = len;
+	len -= 1;
+	for (size_t i = 0; i < count; i++) {
+		if (str[len] < '0' || str[len] > '9')
+		{
+			return 0;
+		}
+		big_int->the_int[i] = str[len] - '0';
+		converted++;
+		len--;
+	}
+big_int->digits_count = converted;
+	return converted;
+}
 /** print_big_int() prints a BigInt.
 *** @param *big_int The BigInt to be printed.
 */
@@ -78,11 +93,19 @@ void copy_big_int(const struct BigInt *from, struct BigInt *to);
 */
 int main(int argc, char *argv[])
 {
+	int length;
+	int converted;
+	struct BigInt bigint;
 	char user_input[MAX_DIGITS];
 	printf("Pyramid_of_Numbers\n");
 	printf("==================\n");
 	printf("Please enter a Number: ");
 	scanf("%s",user_input);
-	int strtobig_int(const char *str, int len, struct BigInt *big_int);
+	length = strlen(user_input);
+	converted = strtobig_int(user_input, length ,&bigint);
+	if (converted == 0)
+	{
+		return 0;
+	}
 	return 0;
 }
